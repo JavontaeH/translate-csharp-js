@@ -16,7 +16,6 @@ class Die {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     this.value = getRandomInt(1, 6);
-    this.dieString = this.value;
     switch (this.value) {
       case 1:
         this.dieString = "one";
