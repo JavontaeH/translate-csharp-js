@@ -40,11 +40,26 @@ displaySpellBook = (book) => {
 makeGoodSpellBook = (spells) => {
   goodSpells = [];
   spells.forEach((spell) => {
-    if (spell.isEvil === false) {
+    if (!spell.IsEvil) {
       goodSpells.push(spell);
-      console.log(goodSpells);
     }
   });
+  obj = { title: "Good Book", spells: goodSpells };
+  return obj;
 };
-console.log(makeGoodSpellBook(allSpells));
-// displaySpellBook(goodBook);
+
+makeEvilSpellBook = (spells) => {
+  evilSpells = [];
+  spells.forEach((spell) => {
+    if (spell.IsEvil) {
+      evilSpells.push(spell);
+    }
+  });
+  obj = { title: "Evil Book", spells: evilSpells };
+  return obj;
+};
+
+let goodBook = makeGoodSpellBook(allSpells);
+let evilBook = makeEvilSpellBook(allSpells);
+displaySpellBook(goodBook);
+displaySpellBook(evilBook);
